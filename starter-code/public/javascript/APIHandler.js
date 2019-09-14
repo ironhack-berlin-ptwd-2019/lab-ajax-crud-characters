@@ -1,25 +1,24 @@
-class APIHandler {
-  constructor (baseUrl) {
-    this.BASE_URL = baseUrl;
+
+// wrapper class for the API
+class SpotifyAPI {
+  getFullList() {
+    axios.get('http://localhost:8000/characters')
   }
 
-  getFullList () {
-
+  getOneRegister(id) {
+    axios.get(`http://localhost:8000/characters/${id}`)
   }
 
-  getOneRegister () {
+  createOneRegister(name, occupation, weapon, cartoon = false) {
 
+    axios.post(`http://localhost:8000/characters`, { name, occupation, weapon, cartoon })
   }
 
-  createOneRegister () {
-
+  updateOneRegister(id, name, occupation, weapon, cartoon = false) {
+    axios.put(`http://localhost:8000/characters/${id}`, { name, occupation, weapon, cartoon })
   }
 
-  updateOneRegister () {
-
-  }
-
-  deleteOneRegister () {
-
+  deleteOneRegister(id) {
+    axios.delete(`http://localhost:8000/characters/${id}`)
   }
 }
