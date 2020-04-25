@@ -3,6 +3,9 @@
 class SpotifyAPI {
   getFullList() {
     axios.get('http://localhost:8000/characters')
+
+
+    // this is the new feature
   }
 
   getOneRegister(id) {
